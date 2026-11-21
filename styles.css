@@ -1,0 +1,258 @@
+:root {
+  color-scheme: dark;
+  /* Modal samples from the wordmark’s outer edges, letter fill, and red OP. */
+  --ground: #0a060e;
+  --bone: #fcf6e4;
+  --rubric: #972c2b;
+  --hairline: rgb(252 246 228 / 24%);
+  --serif: Georgia, "Times New Roman", serif;
+  --sans: system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: ui-monospace, "Cascadia Mono", Consolas, monospace;
+  --gutter: clamp(1.25rem, 5vw, 3.25rem);
+  background: var(--ground);
+  color: var(--bone);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+h1, h2, h3, p, ul {
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  image-rendering: pixelated;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.page {
+  width: min(65rem, calc(100% - var(--gutter) - var(--gutter)));
+  margin-inline: auto;
+}
+
+.hero {
+  display: grid;
+  width: min(100%, 50rem);
+  margin-inline: auto;
+  text-align: center;
+}
+
+.wordmark,
+.location {
+  grid-area: 1 / 1;
+}
+
+.wordmark {
+  width: 100%;
+}
+
+.location {
+  /* The original frame ends 47.8% of the image width below its top edge. */
+  align-self: start;
+  margin-block-start: 52%;
+  padding-inline: 0.875rem;
+  font: normal clamp(1rem, 0.93rem + 0.57vw, 1.3rem)/1.45 var(--serif);
+  text-wrap: balance;
+}
+
+.section-label {
+  font: 600 0.8125rem/1.4 var(--mono);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.imprint {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(1.1rem, 3.4vw, 2.75rem);
+  max-width: 49rem;
+  margin-inline: auto;
+  padding-block: clamp(2.1rem, 4.3vw, 3.75rem);
+}
+
+.imprint-device {
+  width: clamp(2.75rem, 7vw, 4.75rem);
+}
+
+.imprint p,
+.journals p {
+  margin-block-start: 0.65rem;
+  font: 400 clamp(1.2rem, 1rem + 0.8vw, 1.625rem)/1.43 var(--serif);
+  text-wrap: pretty;
+}
+
+.catalog,
+.journals,
+.colophon {
+  border-block-start: 1px solid var(--hairline);
+}
+
+.catalog {
+  padding-block: clamp(2.1rem, 4vw, 3.375rem);
+}
+
+.catalog .section-label {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin-block-end: clamp(1.4rem, 3.2vw, 2.625rem);
+}
+
+.catalog .section-label::before {
+  content: "";
+  width: 2.5rem;
+  height: 2px;
+  background: var(--rubric);
+}
+
+.games {
+  display: grid;
+  gap: 1.65rem;
+}
+
+.games li {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+}
+
+.games li + li {
+  padding-block-start: 1.65rem;
+  border-block-start: 1px solid var(--hairline);
+}
+
+.games h3 {
+  font: 400 clamp(2rem, 1.5rem + 1.7vw, 2.875rem)/1.1 var(--serif);
+  letter-spacing: -0.035em;
+}
+
+.description {
+  max-width: 58ch;
+  margin-block-start: 0.75rem;
+  font-size: 1.0625rem;
+  line-height: 1.57;
+}
+
+.status {
+  margin-block-start: auto;
+  padding-block-start: 1.25rem;
+  font: 400 0.8125rem/1.4 var(--mono);
+  letter-spacing: 0.035em;
+}
+
+.journals {
+  display: grid;
+  gap: 1.1rem;
+  padding-block: clamp(2.1rem, 4.2vw, 3.75rem);
+}
+
+.blog-links {
+  display: grid;
+  justify-items: start;
+  align-content: center;
+}
+
+.blog-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  color: var(--bone);
+  font-weight: 550;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.28em;
+}
+
+.blog-links a:hover {
+  text-decoration-thickness: 2px;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--bone);
+  outline-offset: 3px;
+}
+
+.colophon {
+  display: grid;
+  justify-items: center;
+  gap: 1rem;
+  padding-block: clamp(2.25rem, 4.3vw, 3.75rem);
+  text-align: center;
+}
+
+.footer-device {
+  width: 2.375rem;
+}
+
+.colophon p {
+  font: 400 0.875rem/1.6 var(--sans);
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+
+@media (max-width: 27rem) {
+  .location,
+  .journals p {
+    font-family: "Times New Roman", Times, serif;
+    font-size: clamp(1rem, 0.35rem + 3.25vw, 1.2rem);
+    letter-spacing: -0.02em;
+  }
+
+  .location {
+    padding-inline: 0.2rem;
+  }
+}
+
+@media (min-width: 50rem) {
+  .games {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0;
+  }
+
+  .games li:not(:last-child) {
+    padding-inline-end: clamp(1.25rem, 2.7vw, 2.5rem);
+  }
+
+  .games li + li {
+    padding-block-start: 0;
+    padding-inline-start: clamp(1.25rem, 2.7vw, 2.5rem);
+    border-block-start: 0;
+    border-inline-start: 1px solid var(--hairline);
+  }
+
+  .journals {
+    grid-template-columns: 2fr 1fr;
+    align-items: center;
+  }
+
+  .blog-links {
+    justify-self: end;
+  }
+}
