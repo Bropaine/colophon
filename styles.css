@@ -211,6 +211,34 @@ a:focus-visible {
   width: 2.375rem;
 }
 
+.footer-social {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  max-inline-size: 100%;
+}
+
+.footer-social a {
+  display: grid;
+  place-items: center;
+  inline-size: 2.5rem;
+  block-size: 2.5rem;
+  color: #EFE7D3;
+}
+
+.footer-social a:hover,
+.footer-social a:focus-visible {
+  color: #A83226;
+}
+
+.footer-social svg {
+  display: block;
+  inline-size: 1.5rem;
+  block-size: 1.5rem;
+  fill: currentColor;
+}
+
 .colophon p {
   font: 400 0.875rem/1.6 var(--sans);
   letter-spacing: -0.015em;
